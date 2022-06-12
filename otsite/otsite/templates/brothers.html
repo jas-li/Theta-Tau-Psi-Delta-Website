@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Brothers page</h1>
+<h3>Active Brothers</h3>
+
+<ul>
+    {% for i in object %}
+    <li>{{ i.first_name }} {{ i.last_name }}: {{ i.major }}</li>
+    {% endfor %}
+</ul>
+
+
+
+<!-- <ul>
+    {% for name in names %}
+        <li>{{ forloop.counter }} : {{ name }}</li>
+    {% endfor %}
+</ul> -->
+{% endblock %}
