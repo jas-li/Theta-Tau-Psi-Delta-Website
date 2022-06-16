@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import CreateView, FormView
 from .forms import RegisterForm, LoginForm
 from django.contrib.auth import authenticate, login
@@ -33,4 +33,4 @@ class LoginView(FormView):
                 return redirect(redirect_path)
             else:
                 return redirect("/")
-        return super(LoginView, self).form_invalid()
+        return super(LoginView, self).form_invalid(form)
